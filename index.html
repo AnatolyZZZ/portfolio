@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <header>
+        <nav>
+            <span class="material-symbols-outlined" id="burger-menu">menu</span>
+           
+            <ul>
+                <li><a href="#bio">Bio</a></li>
+                <li><a href="#skills-ancor">Skills</a></li>
+                <li><a href="#projects-ancor">Projects</a></li>
+                <li><a href="#experience-ancor">Experience</a></li>
+                <!-- <li class="push"><a href="#contact"><button>Contact me</button></a></li> -->
+            </ul>
+        </nav>   
+    </header>
+    
+    <div class="main-block">
+
+        <div id="bio">
+            <img src="images/Tolya.jpg" alt="My photo">
+            <div id="resume">
+                <h1>Anatoly Zykov</h1>
+                <p>Full Stack Developer experienced in JavaScript based programming with a background in marketing and product/project management in finance, food-delivery and medtech. Possess strong skills in finances. Passion to solving problems</p>
+            </div>
+        </div>
+
+        <h2 id="skills-ancor">My skills</h2>
+
+        <div id="skills">
+            <div class="skill">
+                <img src="images/html-5_orange.jpg" alt="html5">
+                <p>HTML 5</p>
+            </div>
+            <div class="skill">
+                <img src="images/css3_orange.jpg" alt="css3">
+                <p>CSS 3</p>
+            </div>
+            <div class="skill">
+                <img src="images/javascript_orange.jpg" alt="JS">
+                <p> Java Script</p>
+            </div>
+            <div class="skill">
+                <img src="images/node-js_orange.jpg" alt="Node.js">
+                <p>Node JS</p>
+            </div>
+            <div class="skill">
+                <img src="images/react_orange.jpg" alt="React">
+                <p>React</p>
+            </div>
+            <div class="skill">
+                <img src="images/postgresql_orange.jpg" alt="Posgress">
+                <p>Postgrees</p>
+            </div>
+        </div>
+    
+        <h2 id="projects-ancor">My projects</h2>
+
+        <div id="projects">
+            <div class="project">
+                <img src="images/p1.png">
+                <img src="images/shade.png" alt="" class="shade">
+                <div>
+                    <h3>Two-sided platform with React, Node.js and Postgrees</h3>
+                    <p>CRUDE for "level" instance, different view for admins and players</p>
+                    <div class="buttons">
+                        <a href="https://github.com/AnatolyZZZ/quest_game"><button>Code</button></a>
+                        <a href="https://quest-gtix.onrender.com"><button>Live</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/p2.png">
+                <img src="images/shade.png" alt="" class="shade">
+                <div>
+                    <h3>Movie app</h3>
+                    <p>A small react app which allows to search for movie and explore all data related to it </p>
+                    <div class="buttons">
+                        <a href="https://github.com/AnatolyZZZ/movie_app"><button>Code</button></a>
+                        <a href="https://movie-app-rti4.onrender.com"><button>Live</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/p3.png">
+                <img src="images/shade.png" alt="" class="shade">
+                <div>
+                    <h3>Catch colored box minigame</h3>
+                    <p>The main purpose of this mini-project was to practice at team work.  Also used drag-n-drop events and js animations.
+                    </p>
+                    <div class="buttons">
+                        <a href="https://github.com/AnatolyZZZ/Hakathone1"><button>Code</button></a>
+                        <a href="https://anatolyzzz.github.io/Hakathone1/"><button>Live</button></a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <h2 id="experience-ancor">My experience</h2>
+
+        <div id="experience">
+            <div class="card left">
+                <div class="content">
+                    <h3>2018 - 2023</h3>
+                    <p>Co-founder, Marketing director, Financial director  (production of games for children)</p>
+                    <p>Raised revenue from 0 in 2018 to 1 mln USD in 2020</p>
+                    <p>Build financial/account management from scratch</p>
+                    
+                </div>
+            </div>
+            <div class="card right">
+                <div class="content">
+                    <h3>2018</h3>
+                    <p>Product Manager at Doc+</p>
+                    <p>Launched MVP of a new product in Med-tech startup</p>
+                </div>
+            </div>
+            <div class="card left">
+                <div class="content">
+                    <h3>2017</h3>
+                    <p>Co-founder, Director at Breakfast&Deli</p>
+                    <p>Launched delivery of fresh bakery in the morning, with own app and site </p>
+                </div>
+            </div>
+            <div class="card right">
+                <div class="content">
+                    <h3>2015-2016</h3>
+                    <p>Product Manager / Business analyst at Investelligence</p>
+                    <p>Launched MVP for Multi-sided Round B investing platform</p>
+                </div>
+            </div>
+            <div class="card left">
+                <div class="content">
+                    <h3>2008 - 2015</h3>
+                    <p>Leasing Company, Business Development Department</p>
+                    <p>As system analyst developed internal software for new company branch</p>
+                    <p>Contracted new customers for more than 30 mln USD </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <form action="#" id="contact">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Name" id="name">
+                <label for="email">Email</label>
+                <input type="email" placeholder="email" id="email">
+                <label for="company">Company</label>
+                <input type="text" placeholder="Company name" id="company">
+                <label for="message" id="label-message">Your message</label>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                <input type="submit" id="submit">
+        </form> -->    
+
+    <!-- main block ends -->
+    </div>
+    <footer id="footer"></footer>
+
+</body>
+</html>

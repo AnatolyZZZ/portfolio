@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html,h1,h2,h3,h4,h5,h6,a,button{
+    font-family: "Raleway";
+}
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+
+/* nav starts here */
+#burger-menu {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+li:nth-child(1) a {
+    margin-left: 50px;
+}
+
+nav a{
+    margin: 0 40px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.push {
+    margin-left: auto;
+}
+header button {
+    padding: 3px 10px;
+}
+
+header button:hover {
+    animation: rotate 0.3s ease-out;
+    animation-iteration-count: 1;
+    cursor: pointer;
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    33% {transform: rotate(-4deg);}
+    66% {transform: rotate(6deg);}
+    100% {transform: rotate(0deg);}   
+}
+/* nav ends here */
+
+header {
+    padding: 20px 40px;
+    background-color: #e87200;
+    /* background-image: linear-gradient(rgb(255, 136, 0) 0%, rgb(255, 216, 75) 100%); */
+}
+.main-block {
+    padding: 0px 40px;
+}
+
+/* bio starts here */
+#bio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 40px;
+}
+#resume {
+    width: calc( max(40vw, 240px));
+}
+
+#bio img {
+    width: calc( max(30vw, 180px));
+    /* border-radius: 50%; */
+}
+/* bio ends here */
+/* skills  */
+h2 {
+    margin: 30px 0px 10px 50px;
+}
+h1 {
+    margin-bottom: 20px;
+}
+#skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    justify-items: center;
+    gap: 20px 30px;
+    padding: 20px 50px;
+    max-width: 800px;
+    margin: auto;
+}
+img {
+    max-width: 100%;
+} 
+
+.skill  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* skills ends */
+/* projects  */
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+    gap: 20px 30px;
+    padding: 20px 50px;
+}
+.project {
+    position: relative;
+}
+.project h3  {
+    color: white;
+}
+.project p {
+    color: white;
+}
+
+.project img{
+    width: 100%;
+}
+.shade {
+    position: absolute;
+    top : 0px;
+    left : 0px;
+    opacity: 0;
+}
+
+.project:hover .shade {
+    opacity: 0.85;
+    transition: opacity 0.5s ease-out;
+}
+
+
+.project > div {
+    position: absolute;
+    top : 0px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    padding: 20px;
+}
+.project button {
+    padding: 5px 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border : 1px solid #e87200;
+    color: white;
+
+}
+.project button:hover {
+    padding: 5px 20px;
+    background-color:  #e87200;
+    border: #e87200;
+    color:rgb(0, 0, 0)
+}
+
+.project:hover > div {
+    opacity: 1;
+}
+.project:active > div {
+    opacity: 1;
+}
+.project h3 {
+    margin-bottom: 1rem;
+}
+.project p {
+    margin-bottom: 1rem;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.black-box {
+    width: 25vmin;
+    height: 25vmin;
+    background-color: black;
+    display: inline-block;
+    margin: auto;
+}
+/* projects end */
+
+/* experiance */
+#experience {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+    padding-top: 20px;
+}
+ 
+/* line */
+#experience::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: rgb(0, 0, 0);
+    top: 20px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+  /* card with content */
+.card {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.right {
+    left: 50%;
+    padding-left: 0px;
+}
+
+.left {
+    left: 0;
+    padding-right: 0px;
+}
+/* this is actual card */
+.content {
+    padding: 10px 10px 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+  }
+.content h3 {
+    color: #e87200;
+}
+.content p:nth-child(2) {
+    font-weight: 900;
+}
+.content p {
+    margin-bottom: 20px;
+}
+
+  /* The circles on the timeline */
+  .card:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: -16px;
+    background-color: white;
+    border: 4px solid #e87200;
+    top: 16px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .right::after {
+    left: -16px;
+  }
+  
+
+/* experience ends */
+
+form {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr 4fr 1fr;
+   gap: 10px;
+   padding: 10px 40px;
+}
+
+#name, #email, #company {
+    grid-column: 2 / 4;
+}
+label {
+    justify-self: end;
+}
+#message {
+    grid-row: 4 / 6;
+    grid-column: 2/-1;
+}
+#submit {
+    grid-column: 3 / 4;
+}
+#footer {
+    background-color: #e87200;
+    height: 120px;
+}
+
+@media screen and (max-width: 600px) {
+    .main-block {
+        padding: 0px;
+    }
+    li:nth-child(1) a {
+        margin-left: 0px;
+    }
+    nav a{
+        margin: 0 1rem;
+    }
+}
+
