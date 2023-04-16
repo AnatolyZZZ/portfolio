@@ -11,7 +11,7 @@ class verticalAnimation  {
         this.height = Number(sub2);
         this.object.style.position = 'absolute';
         this.offset = this.height;
-        this.object.style.top = `-${this.offset}.px`;
+        this.object.style.top = `-${this.offset}px`;
         this.inertval = 0;
         this.control = control;
         this.control.addEventListener('click', this.act.bind(this));
@@ -19,7 +19,7 @@ class verticalAnimation  {
     }
     hide () {
         this.offset = this.height;
-        this.object.style.top = `-${this.offset}.px`;
+        this.object.style.top = `-${this.offset}px`;
         clearInterval(this.inertval);
         this.direction = 0;
     }
@@ -27,7 +27,7 @@ class verticalAnimation  {
    async act () {
         const makeStep  = () => {
             this.offset = this.offset + this.direction * this.step;
-            this.object.style.top = `-${this.offset}.px`;
+            this.object.style.top = `-${this.offset}px`;
             if (this.offset >= this.height || this.offset <= 0) {
                 this.offset = this.offset <= 0 ? 0 : this.height;
                 clearInterval(this.inertval);
