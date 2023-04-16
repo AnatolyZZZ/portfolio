@@ -29,6 +29,7 @@ a {
     color: white;
     font-weight: 900;
     font-size: 2rem;
+    cursor: pointer;
 }
 
 #mobile-menu {
