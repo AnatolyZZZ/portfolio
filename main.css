@@ -3,9 +3,9 @@
 html,h1,h2,h3,h4,h5,h6,a,button{
     font-family: "Raleway";
 }
-html {
-	scroll-behavior: smooth;
-}
+    /* html {
+        scroll-behavior: smooth;
+    } */
 
 * {
     margin: 0;
@@ -14,10 +14,38 @@ html {
     /* border: 1px solid black; */
 }
 
+a {
+    text-decoration: none;
+}
+
+.main-block {
+    position: relative;
+    overflow: hidden;
+}
 
 /* nav starts here */
 #burger-menu {
     display: none;
+    color: white;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+#mobile-menu {
+    width: 100%;
+    background-color:#e87200;
+    text-decoration: none;
+}
+.mobile-menu-div {
+    border-bottom: 1px solid white;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+}
+.mobile-menu a {
+    text-decoration: none;
 }
 
 nav ul {
@@ -301,8 +329,11 @@ label {
     li:nth-child(1) a {
         margin-left: 0px;
     }
-    nav a{
-        margin: 0 1rem;
+    nav {
+        display: none;
+    }
+    #burger-menu {
+        display: flex;
     }
 }
 
