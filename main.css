@@ -171,7 +171,7 @@ img {
 }
 .project button {
     cursor: pointer;
-    padding: 1em 3em;
+    padding: 0.8em 2.5em;
     background-color: rgba(255, 255, 255, 0);
     border : 1px solid var(--theme-color);
     color: white;
@@ -346,7 +346,6 @@ label {
     }
     .container {
         width: 80%;
-        margin: 0 auto;
     }
     #mobile-menu{
         visibility: hidden;
@@ -364,7 +363,13 @@ label {
     #resume {
         max-width: 600px;
     }
-
 }
+@media (min-width: 1400px) { 
+    .container {
+        width: 70%;
+    }
+}
+    
+
 
 
