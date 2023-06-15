@@ -348,7 +348,10 @@ label {
         width: 80%;
         margin: 0 auto;
     }
-    #mobile-menu, #burger-menu {
+    #mobile-menu{
+        visibility: hidden;
+    }
+    #burger-menu {
         display: none;
     }
     #bio {
