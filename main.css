@@ -225,7 +225,7 @@ img {
 
   /* card with content */
 .card {
-    padding: 10px 40px;
+    padding: 10px 0;
     position: relative;
     background-color: inherit;
     width: 50%;
