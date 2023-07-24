@@ -115,6 +115,11 @@ h1 {
     padding: 20px 0;
     max-width: 800px;
     margin: auto;
+    position: relative;
+}
+#skills img {
+    position: relative;
+    will-change: left, right, top, opacity;
 }
 img {
     max-width: 100%;
@@ -139,9 +144,11 @@ img {
 }
 .project {
     position: relative;
-    background-color: rgba(0,0,0,0.8);
     display: flex;
     border-radius: 5px;
+}
+.dark-background {
+    background-color: rgba(0,0,0,0.8);
 }
 .project h3, .project p  {
     color: white;
@@ -200,6 +207,17 @@ img {
 .buttons {
     display: flex;
     justify-content: space-around;
+}
+
+.skew {
+    animation: skew alternate-reverse 100ms;
+}
+.skew * {
+    animation: skew alternate-reverse 100ms;
+}
+@keyframes skew {
+    from {transform: skewX(0deg);}
+    to { transform: skewX(30deg);} 
 }
 /* projects end */
 

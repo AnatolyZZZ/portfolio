@@ -1,3 +1,138 @@
+// animation for projects block 
+const assignRight = (obj, start, end, time) => {
+    return new Promise ((resolve) => {
+        let i = 0;
+        let x = 0;
+
+        const animate = () => {
+            i++;
+            x = Math.floor(i*(start - end)/time);
+            // console.log(x)
+            obj.style.right = `${-start+x}px`;
+            if (i < time) {
+                requestAnimationFrame(animate);
+            
+            } else {
+                resolve('done');
+            }
+        }
+        requestAnimationFrame(animate);
+    });
+};
+
+// getting width of container
+let width = getComputedStyle(document.querySelector('#animated')).width;
+let ind = width.indexOf("p")
+const sub1 = width.slice(0,ind)
+ind = width.indexOf(".")
+const sub2 = ind === -1 ? sub1 : sub1.slice(0, ind)
+width = Number(sub2);
+////
+
+const fullAnimation = async (elt) => {
+    // here time is number of renders so 60Hgz + time 60 => 1s of animation
+    // 1/3 sec is 20
+    // move 50px to much
+    await assignRight(elt, width, -50, 20);
+    // this trigers skew css animation 
+    elt.classList.add('skew');
+    // move this 50px back
+    await assignRight(elt, -50, 0, 15);
+    elt.classList.remove("animated");
+    // bacckground does not respect skew so add it after animation 
+    elt.classList.add('dark-background')
+}
+
+const allAnimatedItems = document.querySelectorAll('.animated');
+// move from screen initialy
+for (let item of allAnimatedItems) {
+    item.style.right = `-${width + 500}px`
+}
+/// -1 this to fire callback once because for some reason in it is fired when page is loaded
+let fired = -1;
+
+const AnimationCallback = async (entry) => {
+      fired++;
+      if (fired === 1) {
+        // console.log('Execute');
+        for (let i = 0; i < allAnimatedItems.length; i++) {
+            await fullAnimation(allAnimatedItems[i]);
+        }
+      }
+}
+
+// Create a new Intersection Observer
+let options = {
+    // root: document.querySelector('#projects-ancor'), //  not spec => viewport
+    // margin -300px triggers observation when element achieve 300px from viewport bottom
+    rootMargin: "0px 0px -300px 0px",
+    threshold: 1.0, // should be fully visible
+  };
+const observer = new IntersectionObserver(AnimationCallback, options);
+// Select the target element to observe
+const targetElement = document.querySelector('#projects-ancor');
+// Start observing the target element
+observer.observe(targetElement);
+
+// animation for skills block
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo(
+    '.from-right',
+    {right : '-500px', opacity : 0},
+    {   
+        right : 0,
+        opacity: 1,
+        scrollTrigger : {
+            trigger : '#animated',
+            start: 'top',
+            end: '250',
+            scrub: true
+        }
+    }
+)
+gsap.fromTo(
+    '.from-left',
+    {left : '-500px', opacity : 0},
+    {   
+        left : 0,
+        opacity: 1,
+        scrollTrigger : {
+            trigger : '#animated',
+            start: 'top',
+            end: '250',
+            scrub: true
+        }
+    }
+)
+gsap.fromTo(
+    '.from-top',
+    {top: '-500px'},
+    {   
+        top: 0,
+        scrollTrigger : {
+            trigger : '#animated',
+            start: 'top',
+            end: '250',
+            scrub: true
+        }
+    }
+)
+gsap.fromTo(
+    '.from-bottom',
+    {bottom: '-500px'},
+    {   
+        bottom: 0,
+        scrollTrigger : {
+            trigger : '#animated',
+            start: 'top',
+            end: '250',
+            scrub: true
+        }
+    }
+)
+// animation for menu
+
 class verticalAnimation  {
     constructor (obj, speed, control) {
         this.object = obj;

@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -39,7 +42,7 @@
             <a href="#contact-ancor"><div class="mobile-menu-div">Contact me</div></a>
             <a href='./Anatoly_Zykov_CV.pdf' download="Anatoly_Zykov_CV.pdf" target="_blank"><div class="mobile-menu-div mobile-download">CV</div></a>     
         </div>
-        <div class="container">
+        <div class="container" id="animated">
             
             <div id="bio">
                 <img src="images/Tolya.jpg" alt="My photo">
@@ -51,36 +54,37 @@
             <h2 id="skills-ancor">My skills</h2>
             <div id="skills">
                 <div class="skill">
-                    <img src="images/html-5_orange.jpg" alt="html5">
+                    <img src="images/html-5_orange.jpg" alt="html5" id="html-5" class="from-left">
                     <p>HTML 5</p>
                 </div>
                 <div class="skill">
-                    <img src="images/css3_orange.jpg" alt="css3">
+                    <img src="images/css3_orange.jpg" alt="css3" id="css3" class="from-left from-top">
                     <p>CSS 3</p>
                 </div>
                 <div class="skill">
-                    <img src="images/javascript_orange.jpg" alt="JS">
+                    <img src="images/javascript_orange.jpg" alt="JS" id="js" class="from-left from-bottom">
                     <p> Java Script</p>
                 </div>
                 <div class="skill">
-                    <img src="images/node-js_orange.jpg" alt="Node.js">
+                    <img src="images/node-js_orange.jpg" alt="Node.js" id="node" class="from-right">
                     <p>Node JS</p>
                 </div>
                 <div class="skill">
-                    <img src="images/react_orange.jpg" alt="React">
+                    <img src="images/react_orange.jpg" alt="React" id="react" class="from-right from-top">
                     <p>React</p>
                 </div>
                 <div class="skill">
-                    <img src="images/postgresql_orange.jpg" alt="Posgress">
+                    <img src="images/postgresql_orange.jpg" alt="Posgress" id="postgres" class="from-right from-bottom">
                     <p>Postgrees</p>
                 </div>
             </div>
         
         <h2 id="projects-ancor">My projects</h2>
-
+        </div>
+        <div class="container">
         <div id="projects">
 
-            <div class="project">
+            <div class="project animated">
                 <img src="images/desktop-design-step-2-yearly.jpg">
           
                 <div class="project__inner">
@@ -94,7 +98,7 @@
                 </div>
             </div>
 
-            <div class="project">
+            <div class="project animated">
                 <img src="images/desktop-preview.jpg">
           
                 <div class="project__inner">
@@ -108,7 +112,7 @@
                 </div>
             </div>
 
-            <div class="project">
+            <div class="project animated">
                 <img src="images/active-states.jpg">
           
                 <div class="project__inner">
@@ -123,7 +127,7 @@
             </div>
 
     
-            <div class="project">
+            <div class="project animated">
                 <img src="images/movies.png">
     
                  <div class="project__inner">
@@ -150,7 +154,7 @@
                 </div>
             </div> -->
            
-            <div class="project">
+            <div class="project animated">
                 <img src="images/p3.png">
             
                 <div class="project__inner">
@@ -211,7 +215,7 @@
             
         </div>
 
-        <h2 id="contact-ancor">Send me message</h2>
+        <h2 id="contact-ancor">Send me a message</h2>
 
         <form action="#" id="contact">
                 <input type="text" placeholder="Your name" id="name" required autocomplete="name">
@@ -226,6 +230,6 @@
 </div>
     <footer id="footer"></footer>
 
-    <script src="script.js"></script>
+    
 </body>
 </html>
