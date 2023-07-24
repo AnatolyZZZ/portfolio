@@ -119,7 +119,7 @@ h1 {
 }
 #skills img {
     position: relative;
-    /* will-change: left, right, top, bottom, opacity; */
+    will-change: transform;
 }
 img {
     max-width: 100%;
