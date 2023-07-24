@@ -29,28 +29,28 @@ const targetElement = document.querySelector('#projects-ancor');
 // Start observing the target element
 observer.observe(targetElement);
 
-// animation for skills block
+// --------------animation for skills block---------------
 gsap.registerPlugin(ScrollTrigger);
 
 const animations = [
   { 
     element: '.from-right',
-    properties: { transform: 'translateX(1000px)'},
+    properties: { transform: 'translateX(3000px)'},
     targetProperties: { transform: 'translateX(0)'}
   },
   { 
     element: '.from-left',
-    properties: { transform: 'translate(-1000px)'},
+    properties: { transform: 'translate(-3000px)'},
     targetProperties: { transform: 'translateX(0)'}
   },
   { 
     element: '.from-top',
-    properties: { transform: 'translateY(2000px)' },
+    properties: { transform: 'translateY(3000px)' },
     targetProperties: { transform: 'translateY(0)'}
   },
   { 
     element: '.from-bottom',
-    properties: { transform: 'translateY(-2000px)' },
+    properties: { transform: 'translateY(-3000px)' },
     targetProperties: { transform: 'translateY(0)'}
   }
 ];
@@ -62,7 +62,7 @@ animations.forEach(animation => {
     {
       scrollTrigger: {
         trigger: '#projects',
-        start: '50%',
+        start: '60%',
         end: 'bottom',
         scrub: true
       },
