@@ -30,46 +30,46 @@ const targetElement = document.querySelector('#projects-ancor');
 observer.observe(targetElement);
 
 // --------------animation for skills block---------------
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const animations = [
-  { 
-    element: '.from-right',
-    properties: { transform: 'translateX(3000px)'},
-    targetProperties: { transform: 'translateX(0)'}
-  },
-  { 
-    element: '.from-left',
-    properties: { transform: 'translate(-3000px)'},
-    targetProperties: { transform: 'translateX(0)'}
-  },
-  { 
-    element: '.from-top',
-    properties: { transform: 'translateY(3000px)' },
-    targetProperties: { transform: 'translateY(0)'}
-  },
-  { 
-    element: '.from-bottom',
-    properties: { transform: 'translateY(-3000px)' },
-    targetProperties: { transform: 'translateY(0)'}
-  }
-];
+// const animations = [
+//   { 
+//     element: '.from-right',
+//     properties: { transform: 'translateX(3000px)'},
+//     targetProperties: { transform: 'translateX(0)'}
+//   },
+//   { 
+//     element: '.from-left',
+//     properties: { transform: 'translate(-3000px)'},
+//     targetProperties: { transform: 'translateX(0)'}
+//   },
+//   { 
+//     element: '.from-top',
+//     properties: { transform: 'translateY(3000px)' },
+//     targetProperties: { transform: 'translateY(0)'}
+//   },
+//   { 
+//     element: '.from-bottom',
+//     properties: { transform: 'translateY(-3000px)' },
+//     targetProperties: { transform: 'translateY(0)'}
+//   }
+// ];
 
-animations.forEach(animation => {
-  gsap.fromTo(
-    animation.element,
-    animation.properties,
-    {
-      scrollTrigger: {
-        trigger: '#projects',
-        start: '60%',
-        end: 'bottom',
-        scrub: true
-      },
-      ...animation.targetProperties
-    }
-  );
-});
+// animations.forEach(animation => {
+//   gsap.fromTo(
+//     animation.element,
+//     animation.properties,
+//     {
+//       scrollTrigger: {
+//         trigger: '#projects',
+//         start: '60%',
+//         end: 'bottom',
+//         scrub: true
+//       },
+//       ...animation.targetProperties
+//     }
+//   );
+// });
 
 // animation for menu
 
