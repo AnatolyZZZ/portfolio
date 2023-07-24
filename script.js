@@ -45,12 +45,12 @@ const animations = [
   },
   { 
     element: '.from-top',
-    properties: { transform: 'translateY(1000px)' },
+    properties: { transform: 'translateY(2000px)' },
     targetProperties: { transform: 'translateY(0)'}
   },
   { 
     element: '.from-bottom',
-    properties: { transform: 'translateY(-1000px)' },
+    properties: { transform: 'translateY(-2000px)' },
     targetProperties: { transform: 'translateY(0)'}
   }
 ];
@@ -61,9 +61,9 @@ animations.forEach(animation => {
     animation.properties,
     {
       scrollTrigger: {
-        trigger: '#animated',
-        start: 'top',
-        end: '250',
+        trigger: '#projects',
+        start: '50%',
+        end: 'bottom',
         scrub: true
       },
       ...animation.targetProperties
