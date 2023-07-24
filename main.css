@@ -119,7 +119,7 @@ h1 {
 }
 #skills img {
     position: relative;
-    will-change: left, right, top, opacity;
+    /* will-change: left, right, top, bottom, opacity; */
 }
 img {
     max-width: 100%;
@@ -146,10 +146,9 @@ img {
     position: relative;
     display: flex;
     border-radius: 5px;
-}
-.dark-background {
     background-color: rgba(0,0,0,0.8);
 }
+
 .project h3, .project p  {
     color: white;
 }
@@ -207,6 +206,24 @@ img {
 .buttons {
     display: flex;
     justify-content: space-around;
+}
+
+.mooving_left {
+    animation: mooving_left forwards 400ms;
+}
+.animated {
+    --main : -1500px;
+    --extra : -1550px;
+    right: var(--main);
+}
+@keyframes mooving_left {
+    0% { transform: translateX(0px);}
+    50% {transform: translateX(var(--extra))}
+    70% { transform: translateX(var(--extra)) skewX(0deg)}
+    80% { transform: translateX(var(--extra)) skewX(30deg)}
+    90% { transform: translateX(var(--extra)) skewX(0deg)}
+    100% { transform: translateX(var(--main))}
+
 }
 
 .skew {

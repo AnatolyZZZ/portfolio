@@ -45,20 +45,49 @@ const fullAnimation = async (elt) => {
 
 const allAnimatedItems = document.querySelectorAll('.animated');
 // move from screen initialy
-for (let item of allAnimatedItems) {
-    item.style.right = `-${width + 500}px`
-}
+// for (let item of allAnimatedItems) {
+//     item.style.right = `-1000px`
+// }
 /// -1 this to fire callback once because for some reason in it is fired when page is loaded
 let fired = -1;
 
+// const AnimationCallback = async (entry) => {
+//       fired++;
+//       if (fired === 1) {
+//         // console.log('Execute');
+//         for (let i = 0; i < allAnimatedItems.length; i++) {
+//             await fullAnimation(allAnimatedItems[i]);
+//         }
+//       }
+// }
+
+const promise400 = async (elt) => {
+    return new Promise (resolve => {
+        elt.classList.add('mooving_left');
+        console.log('class applied')
+        let i = 0;
+        const int = setInterval(()=> {
+            i++; 
+            if (i === 400) {
+                clearInterval(int);
+                console.log('resolved')
+                resolve(true)
+            }
+        }, 1)
+    })
+}
+
 const AnimationCallback = async (entry) => {
-      fired++;
-      if (fired === 1) {
-        // console.log('Execute');
-        for (let i = 0; i < allAnimatedItems.length; i++) {
-            await fullAnimation(allAnimatedItems[i]);
-        }
+    fired++;
+    if (fired === 1) {
+      // console.log('Execute');
+      for (let item of allAnimatedItems) {
+          await new Promise (resolve => {
+            item.classList.add('mooving_left');
+            setTimeout(()=>resolve(true), 400)
+          } )
       }
+    }
 }
 
 // Create a new Intersection Observer
@@ -77,60 +106,45 @@ observer.observe(targetElement);
 // animation for skills block
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.fromTo(
-    '.from-right',
-    {right : '-500px', opacity : 0},
-    {   
-        right : 0,
-        opacity: 1,
-        scrollTrigger : {
-            trigger : '#animated',
-            start: 'top',
-            end: '250',
-            scrub: true
-        }
+const animations = [
+  { 
+    element: '.from-right',
+    properties: { right: '-500px', opacity: 0 },
+    targetProperties: { right: 0, opacity: 1}
+  },
+  { 
+    element: '.from-left',
+    properties: { left: '-500px', opacity: 0 },
+    targetProperties: { left: 0, opacity: 1}
+  },
+  { 
+    element: '.from-top',
+    properties: { top: '-500px' },
+    targetProperties: { top: 0}
+  },
+  { 
+    element: '.from-bottom',
+    properties: { bottom: '-500px' },
+    targetProperties: { bottom: 0}
+  }
+];
+
+animations.forEach(animation => {
+  gsap.fromTo(
+    animation.element,
+    animation.properties,
+    {
+      scrollTrigger: {
+        trigger: '#animated',
+        start: 'top',
+        end: '250',
+        scrub: true
+      },
+      ...animation.targetProperties
     }
-)
-gsap.fromTo(
-    '.from-left',
-    {left : '-500px', opacity : 0},
-    {   
-        left : 0,
-        opacity: 1,
-        scrollTrigger : {
-            trigger : '#animated',
-            start: 'top',
-            end: '250',
-            scrub: true
-        }
-    }
-)
-gsap.fromTo(
-    '.from-top',
-    {top: '-500px'},
-    {   
-        top: 0,
-        scrollTrigger : {
-            trigger : '#animated',
-            start: 'top',
-            end: '250',
-            scrub: true
-        }
-    }
-)
-gsap.fromTo(
-    '.from-bottom',
-    {bottom: '-500px'},
-    {   
-        bottom: 0,
-        scrollTrigger : {
-            trigger : '#animated',
-            start: 'top',
-            end: '250',
-            scrub: true
-        }
-    }
-)
+  );
+});
+
 // animation for menu
 
 class verticalAnimation  {
