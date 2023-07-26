@@ -30,7 +30,20 @@ const targetElement = document.querySelector('#projects-ancor');
 observer.observe(targetElement);
 
 // --------------animation for skills block---------------
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo(
+        document.querySelector('#skills'),
+        { transform: 'translate(-2000px)' },
+        {
+          scrollTrigger: {
+            trigger: '#projects',
+            start: '30%',
+            end: 'bottom',
+            scrub: true
+          },
+          transform: 'translate(-0px)' 
+        }
+      );
 
 // const animations = [
 //   { 
